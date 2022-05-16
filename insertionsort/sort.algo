@@ -1,0 +1,35 @@
+FUNCTION read_n (n) : INTEGER
+VAR
+    n : INTEGER;
+BEGIN
+    read (n);
+    RETURN n ;
+END
+PROCEDURE read_t(n :INTEGER, VAR t: ARRAY_OF INTEGER)
+VAR
+    i : INTEGER
+BEGIN
+    FOR i FROM 0 TO n-1 DO
+        read (t[i]);
+    END_FOR
+END
+
+
+
+ALGORITHM SORT
+VAR
+    i, j, n, x: INTEGER;
+    t : ARRAY_OF INTEGER[100];
+BEGIN
+    n:= read_n ();
+    read_t(n,t);
+    FOR j FROM 0 TO n-1 DO
+    FOR i FROM 0 TO n-1 DO
+        WHILE (t[i-1]>t[i] and i>0) DO
+        x=t[i-1];
+        t[i-1]=t[i];
+        t[i]=x;
+END_WHILE
+    END_FOR
+    END_FOR
+END
